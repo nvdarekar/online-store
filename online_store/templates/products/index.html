@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page_heading %}
+  <h1> Online store </h1>
+{% endblock page_heading %}
+
+ 
+{% block content %} 
+<div class="col-10 text-center">
+  <a href= "{{ url_for('products_blueprint.create_new_product') }}"  class="thumbnail purple">Create New Product</a>
+</div>
+<div class="col-10 text-center">
+  <a href= "{{ url_for('products_blueprint.view_all_products') }}" class="thumbnail purple"> View All Products  </a>
+</div>
+<div class="col-10 text-center">
+  <a href="#" class="thumbnail purple">Edit Product </a>
+</div>
+{% endblock content %}
+
+
+

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/products.css') }}">
+{% endblock extracss %}
+
+{% block page_heading %}
+  <h1> All Products </h1>
+{% endblock page_heading %}
+
+{% block content %}
+{% raw %}
+<div ng-controller="AllProductsController" >
+ 	<div ng-repeat="product in products">
+		<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+	    	<div id="product-tile-container"> 
+	    		<img ng-src="{{ product.image_url }}" id="product-image"/>
+	    		<div id="product-text-info-container">
+	    			Model Name: <label ng-bind="product.model_name"></label> 
+	    			<br>
+	    			Manufacturer: <label ng-bind="product.manufacturer"></label>
+	    		</div>
+	    	</div>
+	  	</div>
+	 </div>
+</div>
+{% endraw %}
+{% endblock content %}
+
+{% block extrajs %}
+		<script src="{{ url_for('static', filename='js/controllers/all_products_controller.js') }}"> </script>
+{% endblock extrajs %}
